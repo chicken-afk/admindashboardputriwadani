@@ -123,11 +123,11 @@ class PostResource extends Resource
                     ->label('Published Date')
                     ->date(),
 
-                Tables\Columns\TextColumn::make('comments.customer.name')
-                    ->label('Comment Authors')
-                    ->listWithLineBreaks()
-                    ->limitList(2)
-                    ->expandableLimitedList(),
+                // Tables\Columns\TextColumn::make('comments.customer.name')
+                //     ->label('Comment Authors')
+                //     ->listWithLineBreaks()
+                //     ->limitList(2)
+                //     ->expandableLimitedList(),
             ])
             ->filters([
                 Tables\Filters\Filter::make('published_at')
@@ -222,7 +222,7 @@ class PostResource extends Resource
         return $page->generateNavigationItems([
             Pages\ViewPost::class,
             Pages\EditPost::class,
-            Pages\ManagePostComments::class,
+            // Pages\ManagePostComments::class,
         ]);
     }
 
@@ -236,7 +236,7 @@ class PostResource extends Resource
         return [
             'index' => Pages\ListPosts::route('/'),
             'create' => Pages\CreatePost::route('/create'),
-            'comments' => Pages\ManagePostComments::route('/{record}/comments'),
+            // 'comments' => Pages\ManagePostComments::route('/{record}/comments'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
             'view' => Pages\ViewPost::route('/{record}'),
         ];
