@@ -34,7 +34,7 @@ class DocumentationResource extends Resource
                  ->relationship()
                     ->schema([
                         Forms\Components\FileUpload::make('image')
-                            ->image()
+                            ->label('Upload Or video')
                             ->hiddenLabel(),
                     ])
             ]);
